@@ -1,0 +1,117 @@
+.stat-card {
+  background-color: #FFFFFF;
+  border-radius: 8px; /* Figma has a smaller radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 380px; /* Adjusted width */
+  padding: 24px;
+  display: flex;
+  flex-direction: column; /* This is the main layout direction */
+  gap: 16px; /* Space between sections */
+}
+
+/* --- Section 1: Header --- */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.card-options {
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+/* --- Section 2: Body --- */
+.card-body {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between value and pill */
+}
+
+.card-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #000000;
+  margin: 0;
+}
+
+.percentage-pill {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #17C964;
+  background-color: #e8f9f0;
+  border-radius: 12px;
+  padding: 4px 10px;
+}
+
+/* --- Section 3: Footer --- */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.chart-container {
+  flex-shrink: 0;
+}
+
+.legend-container {
+  width: 100%;
+  margin-left: 24px;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.legend-label {
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #555;
+  white-space: nowrap;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.legend-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}

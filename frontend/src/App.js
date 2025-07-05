@@ -9,6 +9,9 @@ import {
 import Login from "./pages/Login";
 
 import Signup from "./pages/Signup";
+import StatsContainer from "./components/StatsContainer";
+import DecisionsContainer from "./components/DecisionsContainer";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,6 +45,8 @@ function App() {
       {!noHeaderRoutes.includes(location.pathname) && <></>}
 
       {/* Corps principal de l'application */}
+      <Navbar></Navbar>
+
       <div className="content">
         <Routes>
           {/* Redirection de la racine vers la page appropriée */}

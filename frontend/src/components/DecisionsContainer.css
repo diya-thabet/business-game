@@ -1,0 +1,18 @@
+.decisions-container {
+  /* --- CHANGED: A more 'cyanish' blue color --- */
+  background-color: #0ccbdc; 
+
+  /* --- CHANGED: A more intense blend mode --- */
+  background-blend-mode: multiply; 
+
+  /* All the other styles for layout and the image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  padding: 40px;
+  margin: 40px auto 40px 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}

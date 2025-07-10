@@ -1,32 +1,28 @@
-// Charger les variables d'environnement depuis le fichier .env
-require('dotenv').config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const gameRoutes = require("./routes/gameRoutes");
+const userRoutes = require("./routes/userRoutes");
+const logisticsRoutes = require("./routes/logisticsRoutes");
 
-// Importer mongoose pour interagir avec MongoDB
-const mongoose = require('mongoose');
-
-// Connexion à MongoDB en utilisant la variable d'environnement MONGO_URI
-const mongo_url = process.env.MONGO_URI;
-
-mongoose.connect(mongo_url, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log('MongoDB Connected...');
-    })
-    .catch((err) => {
-        console.error('MongoDB Connection Error: ', err);
-    });
-
-// Votre code d'application ici (serveur, routes, etc.)
-// Exemple : démarrer un serveur Express
-const express = require('express');
+dotenv.config();
 const app = express();
 
-// Exemple d'endpoint
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+app.use(cors());
+app.use(express.json());
 
-// Démarrer le serveur
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+app.use("/api/game", gameRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/logistics", logisticsRoutes);
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

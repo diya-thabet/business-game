@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Home, User, LogOut, Menu, Search, Moon } from "lucide-react";
 import StatsContainer from "./StatsContainer";
 import DecisionsContainer from "./DecisionsContainer";
+import DeliveryManagementUI from "./DeliveryManagementUI";
 
 import {
   Grid3X3,
@@ -16,6 +17,7 @@ import {
   Plus,
   ChevronDown,
 } from "lucide-react";
+import RecruitmentForm from "./RecruitmentForm";
 
 const LogisticsDashboard = () => {
   return (
@@ -355,8 +357,10 @@ const LogisticsDashboard = () => {
             </div>
           </div>
 
+          <RecruitmentForm></RecruitmentForm>
           <DecisionsContainer></DecisionsContainer>
-          <StatsContainer></StatsContainer>
+
+          <DeliveryManagementUI></DeliveryManagementUI>
         </main>
 
         {/* Right Sidebar - Conseils de l'expert */}

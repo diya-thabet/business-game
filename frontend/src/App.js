@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import StatsContainer from "./components/StatsContainer";
 import DecisionsContainer from "./components/DecisionsContainer";
+import DeliveryManagementUI from "./components/DeliveryManagementUI";
 import Navbar from "./components/Navbar";
 
 function App() {
